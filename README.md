@@ -28,8 +28,37 @@
 
 ## Project setup
 
+## 1. Install Postgres 16:
+```bash
+https://www.postgresql.org/download/
+```
+
+## 2. Install NodeJS v20.11.0:
+```bash
+https://nodejs.org/en/download/package-manager
+```
+
+## 3. Clone the repository:
+```bash
+$ git clone https://github.com/MohammadIbrahim2023/Book-mng.git
+```
+
+## 4. Install Dependencies:
 ```bash
 $ yarn install
+```
+
+## 5. Create Database & Set in .env file:
+```bash
+DATABASE_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5433/<DATABASE-NAME>?schema=public"
+```
+
+## 4. Run Migrations & Seeder:
+```bash
+$ npx prisma migrate dev --name init
+$ npx prisma db seed
+$ npx prisma generate
+
 ```
 
 ## Compile and run the project
