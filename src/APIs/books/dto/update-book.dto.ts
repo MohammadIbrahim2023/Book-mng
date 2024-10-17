@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { ForeignKeyExist } from 'src/validators/foreignKey.validator';
-import { UniqueConstraint } from 'src/validators/unique.validator';
 
 export class UpdateBookDto {
   @ApiProperty({ required: true })

@@ -1,12 +1,13 @@
 import { BadRequestException } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaClient } from '@prisma/client';
 export const UpdateUniqueValidator = async (
   ids: number,
   entity: string,
   properties: {},
 ) => {
-  const prisma = new PrismaService();
+  const prisma = new PrismaClient();
   const result: any[] = [];
+
   for (const p in properties) {
     const uniques = await prisma[entity].findUnique({
       where: { [p]: properties[p] },

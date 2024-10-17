@@ -25,6 +25,7 @@ export class BooksService {
         skip: (offset - 1) * limit,
         take: limit,
         orderBy: { created_at: 'desc' },
+        where: { deleted_at: null },
         include: { authors: { select: { name: true } } },
       }),
     ])
@@ -52,7 +53,7 @@ export class BooksService {
       });
 
   update = async (id: number, dto: UpdateBookDto) => {
-    await UpdateUniqueValidator(+id, 'books', { isbn: dto.isbn });
+    //await UpdateUniqueValidator(+id, 'books', { isbn: dto.isbn });
     return await this.prisma.books
       .update({ where: { id }, data: { ...dto } })
       .then((res) => this.findOne(res?.id))
@@ -66,7 +67,7 @@ export class BooksService {
       .update({ where: { id }, data: { deleted_at: new Date() } })
       .then((res) => ({
         ...this.findOne(res?.id),
-        message: 'Soft Delete successfully.',
+        message: 'Soft Deleted successfully.',
       }))
       .catch((err) => {
         console.log('Error:', err);
