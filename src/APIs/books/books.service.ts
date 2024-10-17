@@ -53,7 +53,6 @@ export class BooksService {
       });
 
   update = async (id: number, dto: UpdateBookDto) => {
-    //await UpdateUniqueValidator(+id, 'books', { isbn: dto.isbn });
     return await this.prisma.books
       .update({ where: { id }, data: { ...dto } })
       .then((res) => this.findOne(res?.id))
