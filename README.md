@@ -89,6 +89,12 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
+## Access
+
+```bash
+#  http://localhost:5000/api_docs
+```
+
 ## Resources
 
 Check out a few resources that may come in handy when working with NestJS:
