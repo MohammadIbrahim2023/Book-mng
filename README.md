@@ -51,10 +51,14 @@ $ yarn install
 ## 5. Set in .env File For Creating Database :
 ```bash
 DATABASE_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/<DATABASE-NAME>?schema=public"
+# <USERNAME> E.g 'postgres'
+# PORT: 5432
+# <DATABASE> E.g 'mydb'
 ```
 
 ## 4. Run Migrations & Seeder:
 ```bash
+# This will create database and tables
 $ npx prisma migrate dev --name init
 $ npx prisma db seed
 $ npx prisma generate
