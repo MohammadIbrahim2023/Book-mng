@@ -48,9 +48,9 @@ $ git clone https://github.com/MohammadIbrahim2023/Book-mng.git
 $ yarn install
 ```
 
-## 5. Create Database & Set in .env file:
+## 5. Set in .env File For Creating Database :
 ```bash
-DATABASE_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5433/<DATABASE-NAME>?schema=public"
+DATABASE_URL="postgresql://<USERNAME>:<PASSWORD>@localhost:5432/<DATABASE-NAME>?schema=public"
 ```
 
 ## 4. Run Migrations & Seeder:
